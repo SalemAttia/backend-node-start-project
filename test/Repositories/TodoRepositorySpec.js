@@ -34,8 +34,7 @@ describe('Repositories/Todo', () => {
                     createdTodo = response;
                     expect(createdTodo).to.containSubset(todoSample);
                     expect(createdTodo.toObject()).to.have.keys([
-                        '_id', 'created_at', 'is_active', 'parent',
-                        'description', 'name', 'name_ar', '__v', 'picture', 'price',
+                        '_id', 'created_at', 'is_active', 'description', 'name', 'name_ar', '__v',
                     ]);
                     expect(createdTodo.is_active).to.be.true;
                 });

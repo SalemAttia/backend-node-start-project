@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-    name: 'first service',
+    name: 'first todo',
     name_ar: 'الخدمه الاولي',
     description: 'service description',
 };
