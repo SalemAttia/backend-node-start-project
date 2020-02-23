@@ -1,0 +1,61 @@
+{
+  "name": "@salem/backend",
+  "version": "2.0.0",
+  "author": "SalemAttia <salem.at.ibrahim@gmail.com>",
+  "description": "kick start node backend project",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SalemAttia/backend-node-start-project"
+  },
+  "engine": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "contributors": [
+    {
+      "name": "Salem Attia <SalemAttia>",
+      "email": "salem.at.ibrahim@gmail.com"
+    }
+  ],
+  "main": "index",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha ./test/ --exit --recursive --timeout=60000",
+    "coverage": "./node_modules/.bin/nyc ./node_modules/.bin/mocha ./test/ --recursive --timeout=60000 --exit",
+    "lint": "./node_modules/.bin/eslint ./src/ ./test/ ./settings/ ./container.js ./connection.js",
+    "lint-fix": "./node_modules/.bin/eslint ./src/ ./test/ ./settings/ ./container.js ./connection.js --fix",
+    "depcheck": "./node_modules/.bin/npm-check --ignore mongodb --ignore npm-check",
+    "docker": "docker-compose build --no-cache && docker-compose run node",
+    "seed": " node ./src/dataSeed.js",
+    "start-dev": "nodemon ./server.js",
+    "check": "npm run lint && npm run test && npm run depcheck"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "chai-subset": "^1.6.0",
+    "eslint": "^6.8.0",
+    "eslint-config-guardians-labs": "^1.0.1",
+    "mocha": "^7.0.1",
+    "npm-check": "^5.9.0",
+    "nyc": "^15.0.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "lodash": "^4.17.15",
+    "mongodb": "^3.4.1",
+    "mongoose": "^5.9.1",
+    "mongoose-paginate-v2": "^1.3.6",
+    "mongoose-slug-generator": "^1.0.4",
+    "mongoose-unique-validator": "^2.0.3",
+    "nodemon": "^2.0.2",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5",
+    "supertest": "^4.0.2"
+  },
+  "peerDependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.6.6"
+  }
+}

@@ -1,0 +1,23 @@
+version: '3'
+services:
+  node:
+    tty: true
+    stdin_open: true
+    container_name: node-backend-kick-start-app
+    env_file:
+      - ./.env
+    depends_on:
+      - mongo
+    build:
+      context: .
+    ports:
+      - 4040:4040
+    volumes:
+      - .:/var/code:rw
+    entrypoint: './startup.sh'
+    links:
+      - mongo:mongo
+  mongo:
+    image: 'mongo:3.4'
+    logging:
+      driver: 'none'
