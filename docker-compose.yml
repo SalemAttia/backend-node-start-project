@@ -14,7 +14,7 @@ services:
       - 4040:4040
     volumes:
       - .:/var/code:rw
-    entrypoint: './startup.sh'
+    command: npm run start-dev
     links:
       - mongo:mongo
   mongo:
